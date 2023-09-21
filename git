@@ -1,0 +1,108 @@
+echo "# TheWarriorBarberShop" >> README.md
+git add README.md
+git branch -M main (elegir una rama)
+
+git init
+git add .
+git commit -m "first commit"
+git config user.email "jplizcano69@gmail.com"
+git config user.name "JPLizcano"
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/JPLizcano/TWBS.git
+git push -u origin master
+
+git commit -m "first commit"
+git push -u origin master
+
+JPLizcano
+J1020494p
+jplizcano69@gmail.com
+
+
+Para resaltar la pestaña activa en el menú de navegación basándote en la URL actual utilizando JavaScript en el cliente, puedes seguir estos pasos:
+
+1. **Agregar una clase CSS para resaltar la pestaña activa**:
+   En tu hoja de estilos CSS, define una clase para resaltar la pestaña activa. Por ejemplo, podrías tener una clase llamada "active" con un estilo diferente, como un fondo de color diferente o un texto en negrita:
+
+   ```css
+   .active {
+       background-color: #007bff; /* Color de fondo azul (puedes cambiarlo) */
+       color: white; /* Color del texto en blanco (puedes cambiarlo) */
+       font-weight: bold; /* Texto en negrita */
+   }
+   ```
+
+2. **Agregar el código JavaScript**:
+   En tu archivo HTML o en un archivo JavaScript incluido en tu página, puedes utilizar JavaScript para encontrar la pestaña activa y aplicar la clase "active" según la URL actual. Aquí hay un ejemplo de cómo hacerlo:
+
+   ```html
+   <script>
+       // Obtén la URL actual
+       var currentUrl = window.location.pathname;
+
+       // Obtén todas las etiquetas 'a' en el menú de navegación
+       var navLinks = document.querySelectorAll('header nav ul li a');
+
+       // Itera a través de los enlaces del menú
+       navLinks.forEach(function (link) {
+           // Obtén la URL del enlace
+           var linkUrl = link.getAttribute('href');
+
+           // Compara la URL actual con la URL del enlace
+           if (currentUrl === linkUrl) {
+               // Si coinciden, agrega la clase 'active' al enlace
+               link.classList.add('active');
+           }
+       });
+   </script>
+   ```
+
+   Asegúrate de que este código JavaScript se encuentre antes del cierre de la etiqueta `</body>` en tu archivo HTML para que se ejecute después de que se haya cargado el contenido de la página.
+
+3. **Marcado HTML en tu menú de navegación**:
+   Asegúrate de que tu menú de navegación en tu archivo `header.hbs` (o donde lo tengas) tenga la estructura adecuada. Cada elemento `<li>` debe contener un enlace `<a>` con una atributo `href` que coincida con las rutas de tus páginas. Por ejemplo:
+
+   ```html
+   <header>
+       <nav>
+           <ul>
+               <li><a href="/">Inicio</a></li>
+               <li><a href="/about">Acerca de</a></li>
+               <li><a href="/contact">Contacto</a></li>
+           </ul>
+       </nav>
+   </header>
+   ```
+
+Con estos pasos, el código JavaScript comparará la URL actual con las URL de tus enlaces de navegación y aplicará la clase "active" al enlace que coincida con la página actual. Esto resaltará la pestaña activa en tu menú de navegación de manera dinámica. Asegúrate de tener la clase CSS "active" definida en tu hoja de estilos como se mostró en el paso 1.
+ 
+Selector de fecha materialize
+input type="text" class="datepicker">
+
+Initialization
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+
+Selector de hora materialize
+<input type="text" class="timepicker">
+        
+Initialization
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.timepicker');
+    var instances = M.Timepicker.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
